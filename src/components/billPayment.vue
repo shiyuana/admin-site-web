@@ -18,7 +18,7 @@
               <el-button type="primary" size="small">查询</el-button>
             </el-form-item>
           </el-form>
-          <el-table :data="paymentAbleData" border style="width: 100%">
+          <el-table :data="paymentAbleData" border style="width: 100%" stripe>
             <el-table-column prop="number" label="E票编号"></el-table-column>
             <el-table-column prop="amount" label="E票金额（元）"></el-table-column>
             <el-table-column prop="publisher" label="开票方"></el-table-column>
@@ -31,6 +31,14 @@
               </template>
             </el-table-column>
           </el-table>
+          <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="12"
+            :page-size="10"
+            class="page"
+          >
+          </el-pagination>
         </el-tab-pane>
         <el-tab-pane label="已支付" name="paymented">
           <el-form :inline="true" :model="paymentedSel" class="demo-form-inline" style="margin:10px 0;">
@@ -44,7 +52,7 @@
               <el-button type="primary" size="small">查询</el-button>
             </el-form-item>
           </el-form>
-          <el-table :data="paymentedData" border style="width: 100%">
+          <el-table :data="paymentedData" border style="width: 100%" stripe>
             <el-table-column prop="number" label="E票编号"></el-table-column>
             <el-table-column prop="amount" label="E票金额（元）"></el-table-column>
             <el-table-column prop="receiver" label="接收方"></el-table-column>
@@ -139,7 +147,77 @@
             amount:20000,
             publisher:'虚拟企业B',
             date:'1557383648'
-          }
+          },
+          {
+            id:1,
+            number:1113234,
+            amount:50000,
+            publisher:'虚拟企业A',
+            date:'1557455349'
+          },
+          {
+            id:2,
+            number:2223234,
+            amount:20000,
+            publisher:'虚拟企业B',
+            date:'1557383648'
+          },
+          {
+            id:1,
+            number:1113234,
+            amount:50000,
+            publisher:'虚拟企业A',
+            date:'1557455349'
+          },
+          {
+            id:2,
+            number:2223234,
+            amount:20000,
+            publisher:'虚拟企业B',
+            date:'1557383648'
+          },
+          {
+            id:1,
+            number:1113234,
+            amount:50000,
+            publisher:'虚拟企业A',
+            date:'1557455349'
+          },
+          {
+            id:2,
+            number:2223234,
+            amount:20000,
+            publisher:'虚拟企业B',
+            date:'1557383648'
+          },
+          {
+            id:1,
+            number:1113234,
+            amount:50000,
+            publisher:'虚拟企业A',
+            date:'1557455349'
+          },
+          {
+            id:2,
+            number:2223234,
+            amount:20000,
+            publisher:'虚拟企业B',
+            date:'1557383648'
+          },
+          {
+            id:1,
+            number:1113234,
+            amount:50000,
+            publisher:'虚拟企业A',
+            date:'1557455349'
+          },
+          {
+            id:2,
+            number:2223234,
+            amount:20000,
+            publisher:'虚拟企业B',
+            date:'1557383648'
+          },
         ],
         paymentAbleSel:{
           publisher:''
@@ -230,5 +308,9 @@
   }
   .elRowBottom{
     margin-bottom:20px;
+  }
+  .page{
+    float:right;
+    margin-top:20px;
   }
 </style>

@@ -9,6 +9,8 @@ import Home from '@/components/home'
 import ChangeBill from '@/components/changeBill'
 import BillManage from '@/components/billManage'
 import BillPayment from '@/components/billPayment'
+import DealMonitor from '@/components/dealMonitor'
+import PaymentProtocol from '@/components/paymentProtocol'
 
 export default new Router({
   mode:'history',//在创建的router对象中，如果不配置 mode，就会使用默认的 hash 模式，该模式下会将路径格式化为 # 开头
@@ -47,6 +49,18 @@ export default new Router({
       path: '/billPayment',
       name: 'billPayment',
       component: BillPayment,
+      meta: { navShow: true}
+    },
+    {
+      path: '/dealMonitor',
+      name: 'dealMonitor',
+      component: DealMonitor,
+      meta: { navShow: true}
+    },
+    {
+      path: '/paymentProtocol',
+      name: 'paymentProtocol',
+      component: PaymentProtocol,
       meta: { navShow: true}
     }
   ]

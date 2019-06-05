@@ -1,7 +1,7 @@
 <!--页面整体分为左侧导航栏和右侧内容部分-->
 <!--整个页面设置width和height都为100%，设置display:flex-->
 <!--设置左侧导航的display为inline-block,左侧导航不论展开还是收起都将按默认的宽度显示，如果不设置的话，每一个菜单都将会作为块级元素一行显示一条-->
-<!--设置右侧内容的flex-grow为2，这样的话，不论展开还是收起，它都将占据左侧导航剩下的全部空间，右侧内容部分根据左侧导航的宽度实现了动态的宽度-->
+<!--设置右侧内容的flex-grow为1，这样的话，不论展开还是收起，它都将占据左侧导航剩下的全部空间，右侧内容部分根据左侧导航的宽度实现了动态的宽度-->
 <template>
   <el-container class="appContainer" >
 
@@ -57,7 +57,7 @@
       </el-header>
       <!--上方导航 END-->
 
-      <transition name="move" mode="out-in">
+      <transition name="slide-fade">
         <!--router-view用来渲染页面-->
         <router-view></router-view>
       </transition>
@@ -111,11 +111,6 @@
         this.currentMenu=key;
         this.$router.push(key)
       },
-      //刷新浏览器导航菜单仍然保持之前的选中状态
-      beforeunloadHandler:function () {
-        var _this=this;
-        _this.currentMenu=window.location.pathname;
-      },
       //右上角下拉菜单
       handleCommand:function(command){
         var _this=this;
@@ -132,10 +127,10 @@
       var _this=this;
       _this.query('get','/menu',{},function(res){
         _this.menu=res.data.data;
+        //一加载进来或者刷新浏览器，默认选中首页的导航菜单和跳转到首页的路径
         _this.currentMenu="/home";
+        _this.$router.push("/home");
       })
-      //刷新浏览器导航菜单仍然保持之前的选中状态
-      window.addEventListener('beforeunload', this.beforeunloadHandler())
     }
   }
 </script>
@@ -155,6 +150,16 @@
     display: -webkit-flex;
     width:100%;
     height:100%;
+  }
+
+  .slide-fade-enter-active {
+    transition: all .1s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave {
+    opacity: 0;
   }
 
   /*左侧导航*/

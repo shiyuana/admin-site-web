@@ -5,11 +5,11 @@
       <el-breadcrumb-item>E票管理</el-breadcrumb-item>
     </el-breadcrumb>
     <div class="content">
-      <el-row :gutter="50" class="rowBigBottom">
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+      <el-row :gutter="50">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -28,10 +28,10 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -50,10 +50,10 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -72,10 +72,10 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -95,11 +95,11 @@
           </el-card>
         </el-col>
       </el-row>
-      <el-row :gutter="50" class="rowBigBottom">
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+      <el-row :gutter="50">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -118,10 +118,10 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -140,10 +140,10 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -162,10 +162,10 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" class="colBottom">
           <el-card class="box-card">
             <div slot="header" class="clearfix">
-              <span>E票编号：2345612246967</span>
+              <span>E票编号：23456122</span>
               <el-button style="float: right; padding: 3px 0" type="text" @click="handleFlow">流转轨迹</el-button>
             </div>
             <div  class="text item">
@@ -250,7 +250,7 @@
     padding:30px;
     border-radius:8px;
   }
-  .rowBigBottom{
+  .colBottom{
     margin-bottom:50px;
   }
   .rowSmallBottom{

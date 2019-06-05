@@ -129,4 +129,7 @@
     height: 178px;
     display: block;
   }
+  .el-input__inner{
+    width:300px;
+  }
 </style>
