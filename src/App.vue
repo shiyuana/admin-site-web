@@ -127,9 +127,9 @@
       var _this=this;
       _this.query('get','/menu',{},function(res){
         _this.menu=res.data.data;
-        //一加载进来或者刷新浏览器，默认选中首页的导航菜单和跳转到首页的路径
-        _this.currentMenu="/home";
-        _this.$router.push("/home");
+        //根据路径确定导航某项的选中状态
+        var index=window.location.href.lastIndexOf("/");
+        _this.currentMenu=window.location.href.slice(index);
       })
     }
   }
@@ -140,6 +140,7 @@
   *{
     margin:0;
     padding:0;
+    box-sizing: border-box;
   }
   html,body{
     width:100%;
@@ -204,7 +205,6 @@
 
   .appContent{
     position:relative;
-    /*flex:1;*/
     width:100%;
   }
 

@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <el-breadcrumb separator="/" class="header">
+      <el-breadcrumb-item>系统管理</el-breadcrumb-item>
+      <el-breadcrumb-item>支付协议</el-breadcrumb-item>
+    </el-breadcrumb>
     <div class="content">
       <script id="editor" type="text/plain" style="width:800px;height:600px;margin:0 auto;"></script>
     </div>
@@ -21,14 +25,12 @@
   .container{
     padding:30px;
   }
+  .header{
+    margin-bottom:30px;
+  }
   .content{
     background-color: #f1f1f1;
     padding:30px;
     border-radius:8px;
-  }
-  #editor{
-    width:80%;
-    height:80%;
-    margin:0 auto;
   }
 </style>
