@@ -1,0 +1,10 @@
+/*position*/
+.pn-re{
+  position:relative;
+}
+.pn-ae{
+  position:absolute;
+}
+.pn-fd{
+  position:fixed;
+}

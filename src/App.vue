@@ -1,7 +1,7 @@
 <!--页面整体分为左侧导航栏和右侧内容部分-->
 <!--整个页面设置width和height都为100%，设置display:flex-->
 <!--设置左侧导航的display为inline-block,左侧导航不论展开还是收起都将按默认的宽度显示，如果不设置的话，每一个菜单都将会作为块级元素一行显示一条-->
-<!--设置右侧内容的flex-grow为1，这样的话，不论展开还是收起，它都将占据左侧导航剩下的全部空间，右侧内容部分根据左侧导航的宽度实现了动态的宽度-->
+<!--设置右侧内容的width:100%，这样的话，不论展开还是收起，它都将占据左侧导航剩下的全部空间，右侧内容部分根据左侧导航的宽度实现了动态的宽度-->
 <template>
   <el-container class="appContainer" >
 
@@ -70,11 +70,21 @@
         <el-form-item label="旧密码">
           <el-input v-model="passwordForm.oldPassword" autocomplete="off" ></el-input>
         </el-form-item>
-        <el-form-item label="新密码" >
-          <el-input v-model="passwordForm.newPassword" autocomplete="off" ></el-input>
+        <el-form-item label="新密码" class="pn-re" v-show="isShowNewPassword">
+          <el-input v-model="passwordForm.newPassword" autocomplete="off" type="text"></el-input>
+          <img src="./assets/showPassword.png" class="passwordImg"  @click="handleIsShowNewPassword"/>
         </el-form-item>
-        <el-form-item label="确认密码" >
-          <el-input v-model="passwordForm.confirmPassword" autocomplete="off" ></el-input>
+        <el-form-item label="新密码" class="pn-re" v-show="!isShowNewPassword">
+          <el-input v-model="passwordForm.newPassword" autocomplete="off" type="password"></el-input>
+          <img src="./assets/hidePassword.png" class="passwordImg" @click="handleIsShowNewPassword"/>
+        </el-form-item>
+        <el-form-item label="确认密码" class="pn-re" v-show="isShowComfirePassword">
+          <el-input v-model="passwordForm.confirmPassword" autocomplete="off" type="text"></el-input>
+          <img src="./assets/showPassword.png" class="passwordImg"  @click="handleIsShowComfirePassword"/>
+        </el-form-item>
+        <el-form-item label="确认密码" class="pn-re" v-show="!isShowComfirePassword">
+          <el-input v-model="passwordForm.confirmPassword" autocomplete="off" type="password"></el-input>
+          <img src="./assets/hidePassword.png" class="passwordImg"  @click="handleIsShowComfirePassword"/>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -99,7 +109,9 @@
           oldPassword:'',
           newPassword:'',
           confirmPassword:''
-        }
+        },
+        isShowNewPassword:true,//是否显示新密码
+        isShowComfirePassword:true,//是否显示确认密码
       };
     },
     methods: {
@@ -121,6 +133,14 @@
           //修改密码
           _this.dialogPasswordVisible=true;
         }
+      },
+      handleIsShowNewPassword:function(){
+        var _this=this;
+        _this.isShowNewPassword = !_this.isShowNewPassword;
+      },
+      handleIsShowComfirePassword:function(){
+        var _this=this;
+        _this.isShowComfirePassword = !_this.isShowComfirePassword;
       }
     },
     mounted:function(){
@@ -245,6 +265,14 @@
   }
   .user-name{
     margin:0 10px 0 15px;
+  }
+
+  .passwordImg{
+    position: absolute;
+    right:20px;
+    top:12px;
+    width:28px;
+    height:16px;
   }
 </style>
 

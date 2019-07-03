@@ -8,6 +8,7 @@ import 'lib-flexible/flexible'
 import Echarts from 'echarts'
 Vue.prototype.echarts = Echarts
 import Query from './common/query.js'
+import './common/common.css'
 import '../static/UE/ueditor.config'
 import '../static/UE/ueditor.all.min'
 import'../static/UE/lang/zh-cn/zh-cn.js'
